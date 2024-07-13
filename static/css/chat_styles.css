@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(35, 34, 34);
+    color: rgb(198, 202, 206);
+  }
+
+div{
+    background-color: rgb(87, 83, 83);
+    color: rgb(232, 226, 226);
+    width: 100%;
+    height: auto;
+    border: 2px solid gold;
+    border-radius: 12px;
+    padding: 9px;
+    text-align: justify;
+}
+
+header {
+    background-color: rgb(20, 20, 20);
+    margin-top: -20px;
+    width: 105%;
+    margin-left: -8px;
+    text-align: center;
+    height: 90px;
+  }
+  
+
+p{
+    color: gold;
+    width: auto;
+    max-width: 100%;
+}

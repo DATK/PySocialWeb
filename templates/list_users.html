@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/list_users_style.css')}}" />
+  <title>Пользователи</title>
+</head>
+
+<body>
+  <header>
+    <h1>PythonSW::: Пользователи моей соцсети: {{ln}}</h1>
+  </header>
+
+  {% for i in data %}
+  <p>
+  <div id="dv">
+    <img src="{{url_for('setava',id=i[0])}}" alt="Аватар">
+    <div>
+      <h2>{{i[1]}} {{i[2]}}</h2>
+    </div>
+    <div>
+      <form action="{{url_for('user',id=i[0])}}">
+        <input type="submit" value="Профиль">
+      </form>
+    </div>
+  </div>
+  </p>
+  {% endfor %}
+</body>
+
+</html>

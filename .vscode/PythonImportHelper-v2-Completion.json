@@ -1,0 +1,371 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "SQL",
+        "importPath": "src.SQL",
+        "description": "src.SQL",
+        "isExtraImport": true,
+        "detail": "src.SQL",
+        "documentation": {}
+    },
+    {
+        "label": "SQL",
+        "importPath": "src.SQL",
+        "description": "src.SQL",
+        "isExtraImport": true,
+        "detail": "src.SQL",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "Server",
+        "description": "Server",
+        "isExtraImport": true,
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "make_response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Chat",
+        "importPath": "src.Chat",
+        "description": "src.Chat",
+        "isExtraImport": true,
+        "detail": "src.Chat",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "sh",
+        "importPath": "src.shifr",
+        "description": "src.shifr",
+        "isExtraImport": true,
+        "detail": "src.shifr",
+        "documentation": {}
+    },
+    {
+        "label": "unsh",
+        "importPath": "src.shifr",
+        "description": "src.shifr",
+        "isExtraImport": true,
+        "detail": "src.shifr",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "Chat",
+        "kind": 6,
+        "importPath": "src.Chat",
+        "description": "src.Chat",
+        "peekOfCode": "class Chat:\n    def __init__(self,users=[]):\n        self.users=users\n        try:\n            with open(\"./src/db/Messanges.json\",\"r\",encoding=\"UTF-8\") as f:\n                self.data=json.load(f)\n        except:\n            with open(\"./src/db/Messanges.json\",\"w\",encoding=\"UTF-8\") as f:\n                json.dump({},f)\n            self.data={}",
+        "detail": "src.Chat",
+        "documentation": {}
+    },
+    {
+        "label": "sh",
+        "kind": 2,
+        "importPath": "src.shifr",
+        "description": "src.shifr",
+        "peekOfCode": "def sh(text, alf=alf, key=2):\n    cezar_shifr = []\n    for j in range(len(text)):\n        for i in range(len(alf)):\n            # print(i,j)\n            if text[j] == alf[i]:\n                # if text[j]==\" \":\n                # text[j]=='|he|re_|prob|el'\n                if i + key > len(alf)-1:\n                    # print(\"          \",i,j)",
+        "detail": "src.shifr",
+        "documentation": {}
+    },
+    {
+        "label": "unsh",
+        "kind": 2,
+        "importPath": "src.shifr",
+        "description": "src.shifr",
+        "peekOfCode": "def unsh(text, alf=alf, key=2):\n    cezar_un = []\n    for j in range(len(text)):\n        for i in range(len(alf)):\n            # print(i,j)\n            if alf[i] == text[j]:\n                if i + key > len(alf)-1:\n                    # print(\"          \",i,j)\n                    cezar_un.append(text[j])\n                else:",
+        "detail": "src.shifr",
+        "documentation": {}
+    },
+    {
+        "label": "dcc",
+        "kind": 2,
+        "importPath": "src.shifr",
+        "description": "src.shifr",
+        "peekOfCode": "def dcc(alf):\n    dc={}\n    for i in range(len(alf)):\n        dc[alf[i]]=\"1\"*i\n    dc[\"Q\"]=\"LEN\"\n    return dc\n\"\"\"\ndef unshifr_brutforce(text,key=10,alf=alf):\n    rs=[]\n    res=\"\"",
+        "detail": "src.shifr",
+        "documentation": {}
+    },
+    {
+        "label": "unshifr_brutforce",
+        "kind": 2,
+        "importPath": "src.shifr",
+        "description": "src.shifr",
+        "peekOfCode": "def unshifr_brutforce(text,key=10,alf=alf):\n    rs=[]\n    res=\"\"\n    for p in range(key):\n        for j in range(len(text)):\n            for i in range(len(alf)):\n                # print(i,j)\n                if alf[i] == text[j]:\n                    if i + p > len(alf)-1:\n                        # print(\"          \",i,j)",
+        "detail": "src.shifr",
+        "documentation": {}
+    },
+    {
+        "label": "alf",
+        "kind": 5,
+        "importPath": "src.shifr",
+        "description": "src.shifr",
+        "peekOfCode": "alf = \"QWERTYUIOPASDFGHJ(KLZXCVBNMabc\\\"defghiЙФЯЧЫЦУК.АВСМИПЕНРТ\\ЬОГ>ШЩДЛБЮЖЗХЭЪjklm/nopqr stuvwxy'z1234567)89_йф0ячыц<увсмипакен|ртогшлб,юдщьзжэхъ*-+=&:;?!@\"\ndef sh(text, alf=alf, key=2):\n    cezar_shifr = []\n    for j in range(len(text)):\n        for i in range(len(alf)):\n            # print(i,j)\n            if text[j] == alf[i]:\n                # if text[j]==\" \":\n                # text[j]=='|he|re_|prob|el'\n                if i + key > len(alf)-1:",
+        "detail": "src.shifr",
+        "documentation": {}
+    },
+    {
+        "label": "SQL",
+        "kind": 6,
+        "importPath": "src.SQL",
+        "description": "src.SQL",
+        "peekOfCode": "class SQL:\n    def __init__(self,db):\n        self.connect=sq.connect(f\"./src/db/{db}.db\")\n        self.cursor=self.connect.cursor()\n        self.Table_user='''CREATE TABLE User_data(\n            ID_usr TEXT PRIMARY KEY,\n            Login TEXT NOT NULL,\n            Name TEXT NOT NULL,\n            Surname TEXT NOT NULL,\n            Password TEXT NOT NULL,",
+        "detail": "src.SQL",
+        "documentation": {}
+    },
+    {
+        "label": "add_user",
+        "kind": 2,
+        "importPath": "HELPER",
+        "description": "HELPER",
+        "peekOfCode": "def add_user(n,prnt=True):\n    for i in range(n):\n        name=f\"BOT{i}\"\n        surname=f\"BOT{i}\"\n        login=f\"Bot_Login{random.randint(100,50000)}\"\n        password=os.urandom(9)\n        if sql.reg_user(login,name,surname,password):\n            if prnt:\n                print(f\"{login} created\")\nadd_user(1000000,False)            ",
+        "detail": "HELPER",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    app.run(host=HOSTS,port=PORT,debug=DEBUG)\nif __name__==\"__main__\":\n    main()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "other",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def other():\n    return redirect(MAIN_ADRES)\n@app.route(\"/<path:way>\")\ndef other2(way):\n    return redirect(MAIN_ADRES)\n@app.route(f\"{UPLOAD_FILE}/<id>\",methods=[\"POST\"])\ndef upload(id):\n    session.permanent=True\n    if request.method==\"POST\":\n        if \"login\" in session and \"loginin\" in session and \"id\" in session:",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "other2",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def other2(way):\n    return redirect(MAIN_ADRES)\n@app.route(f\"{UPLOAD_FILE}/<id>\",methods=[\"POST\"])\ndef upload(id):\n    session.permanent=True\n    if request.method==\"POST\":\n        if \"login\" in session and \"loginin\" in session and \"id\" in session:\n            sql=SQL(DATEBASE)\n            file=request.files[\"file\"]\n            try:",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "upload",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def upload(id):\n    session.permanent=True\n    if request.method==\"POST\":\n        if \"login\" in session and \"loginin\" in session and \"id\" in session:\n            sql=SQL(DATEBASE)\n            file=request.files[\"file\"]\n            try:\n                img=file.read()\n                sql.change_ava(img,id)\n            except:",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "setava",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def setava(id):\n    sql=SQL(DATEBASE)\n    img=sql.get_ava(id)\n    if img!=[]:\n        h=make_response(img)\n        h.headers['Content-Type']='image/'\n        return h\n    else:\n        return \"\"\n@app.route(MAIN_ADRES,methods=[\"GET\",\"POST\"])",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "mainForm",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def mainForm():\n    session.permanent=True\n    if \"loginin\" not in session:\n        session[\"loginin\"]=False\n    if \"login\" not in session:\n        session[\"login\"]=\"\"\n    if \"id\" not in session:\n        session[\"id\"]=\"\"\n    if request.method==\"GET\":\n        return render_template(\"main.html\")",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "user",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def user(id):\n    session.permanent=True\n    sql=SQL(DATEBASE)\n    if \"login\" in session and \"loginin\" in session and session[\"id\"]==id:\n        if request.method==\"GET\":\n            data=sql.get_info(id)\n            user_info=sql.get_dop_info(id)\n            return render_template(\"user_logining.html\",data=data,user_info=user_info)\n        elif request.method==\"POST\":\n            return redirect(f\"{USER}/{id}\")",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "messanges",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def messanges(id):\n    sql=SQL(DATEBASE)\n    if \"login\" in session and \"loginin\" in session and \"id\" in session and session[\"id\"]!=\"\":\n        current_id=session[\"id\"]\n        #print(current_id)\n        chat=Chat([id,current_id])\n        sms=chat.get_sms()\n        name=sql.get_name(current_id)\n        if request.method==\"GET\":\n            return render_template(\"chating_login.html\",messages=[unsh(i) for i in sms])",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def logout(): \n    if \"login\" in session and \"loginin\" in session and session[\"id\"]!=id:\n        del session[\"login\"]\n        del session[\"loginin\"]\n        del session[\"id\"]\n        return redirect(MAIN_ADRES)\n@app.route(USER,methods=[\"GET\",\"POST\"])\ndef list_users():\n    session.permanent=True\n    sql=SQL(DATEBASE)",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "list_users",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def list_users():\n    session.permanent=True\n    sql=SQL(DATEBASE)\n    data=sql.list_users()\n    if request.method==\"GET\":  \n        return render_template(\"list_users.html\",ln=len(data),data=[random.choice(data) for i in range(random.randint(15,30))])\n    elif request.method==\"POST\":\n        return redirect(USER)\n@app.route(f\"{SETTINGS}/<id>\",methods=[\"GET\",\"POST\"])\ndef settings(id):",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def settings(id):\n    if \"login\" in session and \"loginin\" in session and session[\"id\"]==id:\n        sql=SQL(DATEBASE)\n        if request.method==\"GET\":\n            return render_template(\"user_settings.html\",id=id)\n        elif request.method==\"POST\":\n            data=request.form\n            if \"password\" in data:\n                if len(data[\"password\"])<8:\n                    return redirect(url_for('settings',id=id))",
+        "detail": "Server",
+        "documentation": {}
+    }
+]

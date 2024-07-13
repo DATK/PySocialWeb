@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/user_profile_styles.css')}}" />
+  <title>Профиль пользователя</title>
+</head>
+<header>
+  <h1>PythonSW</h1>
+  <form action="{{url_for('list_users')}}">
+    <input type="submit" value="Список пользователей" />
+  </form>
+</header>
+
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="{{url_for('setava',id=data[0])}}" alt="Аватар пользователя" class="profile-image" />
+      <div class="profile-details">
+        <h1>{{data[1]}} {{data[2]}}</h1>
+        <p>Город: {{user_info[2]}}</p>
+        <p>Место рождения: {{user_info[1]}}</p>
+        <p>Дата рождения: {{user_info[0]}}</p>
+        <p>Email: {{user_info[3]}}</p>
+        <p>Телефон: {{user_info[4]}}</p>
+        <form action="{{url_for('messanges', id=data[0])}}" method="post">
+          <input type="submit" class="button" value="Написать сообщение" />
+        </form>
+        <form action="{{url_for('list_users')}}">
+          <input type="submit" value="Список пользователей" />
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

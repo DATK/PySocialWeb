@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/user_settings_styles.css')}}" />
+    <title>Настойки пользователя</title>
+</head>
+
+<body>
+    <header>
+        <h1>PythonSW</h1>
+        <form action="{{url_for('list_users')}}">
+            <input type="submit" value="Список пользователей">
+        </form>
+    </header>
+    <form action="" method="post">
+        <input type="text" name="name" placeholder="Имя">
+        <input type="submit" value="Изменить">
+    </form>
+    <form action="" method="post">
+        <input type="text" name="surname" placeholder="Фамилия">
+        <input type="submit" value="Изменить">
+    </form>
+    <form action="" method="post">
+        <input type="password" name="password" placeholder="Пароль">
+        <input type="submit" value="Изменить">
+    </form>
+    <form action="" method="post">
+        <input type="text" name="city_b" placeholder="Город рождения">
+        <input type="submit" value="Изменить">
+    </form>
+    <form action="" method="post">
+        <input type="text" name="city_l" placeholder="город проживания">
+        <input type="submit" value="Изменить">
+    </form>
+    <form action="" method="post">
+        <input type="email" name="pochta" placeholder="Почта">
+        <input type="submit" value="Изменить">
+    </form>
+    <form action="" method="post">
+        <input type="text" name="number" placeholder="Номер телефона">
+        <input type="submit" value="Изменить">
+    </form>
+    <form action="{{url_for('upload',id=id)}}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" class="button">
+        <input type="submit" class="button" value="Отправить">
+      </form> 
+</body>
+
+</html>

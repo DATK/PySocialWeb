@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/main_styles.css')}}" />
+  <title>PySocWeb</title>
+</head>
+
+<body>
+  <header>
+    <h1>PythonSW</h1>
+    <form action="{{url_for('list_users')}}">
+      <input type="submit" value="Список пользователей" />
+    </form>
+  </header>
+  {% for cat, msg in get_flashed_messages(True) %}
+  <div class="flash {{cat}}">{{msg}}</div>
+  {% endfor %}
+  <section id="main">
+    <div id="logo">
+      <p>
+        Небольшая социальная сеть, написанная при помощи Python FLASK API<br />
+      </p>
+      {% if news %}
+      <p>Новости: </p>
+      <textarea>{news}</textarea>
+      {% else %}
+      <p>Новостей нет</p>
+      {% endif %}
+    </div>
+    <section id="right">
+      <div id="vhod">
+        <h2>Вход</h2>
+        <form action="" method="post">
+          <p>
+            <input type="text" placeholder="Логин" name="login" id="lg" />
+          </p>
+          <p>
+            <input type="password" placeholder="Пароль" name="password" id="ps" />
+          </p>
+          <p><input type="submit" id="but" value="Войти" /></p>
+        </form>
+      </div>
+      <div id="reg">
+        <form action="" method="post">
+          <h2>Создать аккаунт</h2>
+          <p>
+            <input type="text" placeholder="Логин - myloginAQ" name="login" id="lg" />
+          </p>
+          <p>
+            <input type="text" placeholder="Андрей" name="name" id="nm" />
+          </p>
+          <p>
+            <input type="text" placeholder="Зябликов" name="surname" id="sn" />
+          </p>
+          <p>
+            <input type="password" placeholder="Пароль" name="password" id="ps" />
+          </p>
+          <p><input type="submit" id="but" value="Создать аккаунт" /></p>
+        </form>
+      </div>
+    </section>
+  </section>
+</body>
+
+</html>
