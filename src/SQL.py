@@ -134,9 +134,14 @@ class SQL:
     def list_users(self):
         self.cursor.execute(self.Select_all2)
         records=self.cursor.fetchall()
-        data=[len(records)]
-        data.append([random.choice(records) for i in range(15)])
-        return data
+        if len(records)>15:
+            data=[len(records)]
+            data.append([random.choice(records) for i in range(15)])
+            return data
+        else:
+            data=[len(records)]
+            data.append(records)
+            return data
     
     def change_ava(self,file,id):
         self.cursor.execute(self.PhotoChange,(file,id))

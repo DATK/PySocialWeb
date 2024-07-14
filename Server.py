@@ -55,7 +55,7 @@ def such():
     sql=SQL(DATEBASE)
     data=[]
     if request.method=="POST":
-        data=sql.such(f"{request.form["name"]}%")
+        data=sql.such(f"{request.form['name']}%")
         return render_template("list_users.html",data=data)
     if request.method=="GET":
         return render_template("list_users.html",data=data)
