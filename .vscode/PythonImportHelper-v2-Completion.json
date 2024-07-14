@@ -9,6 +9,15 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -73,6 +82,15 @@
         "description": "src.config",
         "isExtraImport": true,
         "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
         "documentation": {}
     },
     {
@@ -198,6 +216,15 @@
         "documentation": {}
     },
     {
+        "label": "backuper",
+        "kind": 2,
+        "importPath": "src.db.smsbecuper",
+        "description": "src.db.smsbecuper",
+        "peekOfCode": "def backuper(file):\n    while True:\n        try:\n            with open(file,\"r\",encoding=\"UTF-8\") as f:\n                data=json.load(f)\n            print(\"data succses writed\")\n        except:\n            with open(file,\"w\",encoding=\"UTF-8\") as f:\n                json.dump(data,f)\n            print(\"data rewrite, error\")",
+        "detail": "src.db.smsbecuper",
+        "documentation": {}
+    },
+    {
         "label": "Chat",
         "kind": 6,
         "importPath": "src.Chat",
@@ -265,7 +292,16 @@
         "kind": 2,
         "importPath": "HELPER",
         "description": "HELPER",
-        "peekOfCode": "def add_user(n,prnt=True):\n    for i in range(n):\n        name=f\"BOT{i}\"\n        surname=f\"BOT{i}\"\n        login=f\"Bot_Login{random.randint(100,50000)}\"\n        password=os.urandom(9)\n        if sql.reg_user(login,name,surname,password):\n            if prnt:\n                print(f\"{login} created\")\nadd_user(1000000,False)            ",
+        "peekOfCode": "def add_user(n,prnt=True):\n    for i in range(n):\n        name=f\"BOT{i}\"\n        surname=f\"BOT{i}\"\n        login=f\"Bot_Login{random.randint(100,50000)}\"\n        password=os.urandom(9)\n        if sql.reg_user(login,name,surname,password):\n            if prnt:\n                print(f\"{login} created\")\ndef requests_test():",
+        "detail": "HELPER",
+        "documentation": {}
+    },
+    {
+        "label": "requests_test",
+        "kind": 2,
+        "importPath": "HELPER",
+        "description": "HELPER",
+        "peekOfCode": "def requests_test():\n    while True:\n        print(requests.get(\"http://192.168.1.122:1478/Python_Social_WEB/users\").status_code)\n#add_user(1000000,False)            \nrequests_test()",
         "detail": "HELPER",
         "documentation": {}
     },
@@ -310,7 +346,16 @@
         "kind": 2,
         "importPath": "Server",
         "description": "Server",
-        "peekOfCode": "def setava(id):\n    sql=SQL(DATEBASE)\n    img=sql.get_ava(id)\n    if img!=[]:\n        h=make_response(img)\n        h.headers['Content-Type']='image/'\n        return h\n    else:\n        return \"\"\n@app.route(MAIN_ADRES,methods=[\"GET\",\"POST\"])",
+        "peekOfCode": "def setava(id):\n    sql=SQL(DATEBASE)\n    img=sql.get_ava(id)\n    if img!=[]:\n        h=make_response(img)\n        h.headers['Content-Type']='image/'\n        return h\n    else:\n        return \"\"\n@app.route(f'{MAIN_ADRES}/list_users/such',methods=[\"POST\",\"GET\"])",
+        "detail": "Server",
+        "documentation": {}
+    },
+    {
+        "label": "such",
+        "kind": 2,
+        "importPath": "Server",
+        "description": "Server",
+        "peekOfCode": "def such():\n    sql=SQL(DATEBASE)\n    data=[]\n    if request.method==\"POST\":\n        data=sql.such(f\"{request.form[\"name\"]}%\")\n        return render_template(\"list_users.html\",data=data)\n    if request.method==\"GET\":\n        return render_template(\"list_users.html\",data=data)\n@app.route(MAIN_ADRES,methods=[\"GET\",\"POST\"])\ndef mainForm():",
         "detail": "Server",
         "documentation": {}
     },
@@ -355,7 +400,7 @@
         "kind": 2,
         "importPath": "Server",
         "description": "Server",
-        "peekOfCode": "def list_users():\n    session.permanent=True\n    sql=SQL(DATEBASE)\n    data=sql.list_users()\n    if request.method==\"GET\":  \n        return render_template(\"list_users.html\",ln=len(data),data=[random.choice(data) for i in range(random.randint(15,30))])\n    elif request.method==\"POST\":\n        return redirect(USER)\n@app.route(f\"{SETTINGS}/<id>\",methods=[\"GET\",\"POST\"])\ndef settings(id):",
+        "peekOfCode": "def list_users():\n    session.permanent=True\n    sql=SQL(DATEBASE)\n    data=sql.list_users()\n    if request.method==\"GET\":  \n        return render_template(\"list_users.html\",ln=data[0],data=data[1])\n    elif request.method==\"POST\":\n        return redirect(USER)\n@app.route(f\"{SETTINGS}/<id>\",methods=[\"GET\",\"POST\"])\ndef settings(id):",
         "detail": "Server",
         "documentation": {}
     },

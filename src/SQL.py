@@ -36,6 +36,7 @@ class SQL:
         self.PhotoChange='UPDATE User_data SET Avatar = ? Where Login = ?'
         self.Select='SELECT * FROM User_data WHERE Login=? AND Password=?'
         self.Select_all='SELECT ID_usr,Name,Surname,Avatar FROM User_data WHERE ID_usr=?'
+        self.Select_such="SELECT ID_usr,Name,Surname,Avatar FROM User_data WHERE Name LIKE ?"
         self.Select_all2='SELECT ID_usr,Name,Surname,Avatar FROM User_data'
         self.Select_login='SELECT * FROM User_data WHERE Login=?'
         self.Select_name='SELECT Name FROM User_data WHERE ID_usr=?'
@@ -133,7 +134,9 @@ class SQL:
     def list_users(self):
         self.cursor.execute(self.Select_all2)
         records=self.cursor.fetchall()
-        return records
+        data=[len(records)]
+        data.append([random.choice(records) for i in range(15)])
+        return data
     
     def change_ava(self,file,id):
         self.cursor.execute(self.PhotoChange,(file,id))
@@ -166,6 +169,10 @@ class SQL:
         elif "number" in data:
             self.cursor.execute(self.setings_number,(data["number"],id))
             self.connect.commit()
-        
+    
+    def such(self,name):
+        self.cursor.execute(self.Select_such,(name,))
+        return self.cursor.fetchall()
+    
     def __del__(self):
         self.connect.close()

@@ -49,7 +49,17 @@ def setava(id):
         return h
     else:
         return ""
- 
+
+@app.route(f'{MAIN_ADRES}/list_users/such',methods=["POST","GET"])
+def such():
+    sql=SQL(DATEBASE)
+    data=[]
+    if request.method=="POST":
+        data=sql.such(f"{request.form["name"]}%")
+        return render_template("list_users.html",data=data)
+    if request.method=="GET":
+        return render_template("list_users.html",data=data)
+        
 
 @app.route(MAIN_ADRES,methods=["GET","POST"])
 def mainForm():
@@ -153,7 +163,7 @@ def list_users():
     sql=SQL(DATEBASE)
     data=sql.list_users()
     if request.method=="GET":  
-        return render_template("list_users.html",ln=len(data),data=[random.choice(data) for i in range(random.randint(15,30))])
+        return render_template("list_users.html",ln=data[0],data=data[1])
     elif request.method=="POST":
         return redirect(USER)
     

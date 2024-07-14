@@ -11,6 +11,10 @@
 <body>
   <header>
     <h1>PythonSW::: Пользователи моей соцсети: {{ln}}</h1>
+    <form action="{{url_for('such')}}" method="post">
+      <input type="text" name="name" placeholder="Имя">
+      <input type="submit" value="Найти">
+    </form>
   </header>
 
   {% for i in data %}
